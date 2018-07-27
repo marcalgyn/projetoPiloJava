@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="../template.xhtml">
+
+
+    <!-- ui:define name="titulo">Função</ui:define -->
+
+    <ui:define name="corpo"></ui:define>
+    <h:form>
+        <h1>Função do Usuário</h1>
+
+        <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 10px" columnClasses="rotulo, campo">
+            <p:outputLabel value="Codigo"  for="codigo"/>
+            <p:inputText id="codigo" size="10" maxlength="15"/>
+
+            <p:outputLabel value="Nome" for="nome"/>
+            <p:inputText id="nome" size="50" maxlength="50" />
+
+            <p:outputLabel value="Nivel" for="nivel" />
+            <p:selectOneMenu id="nivel">
+                <f:selectItem itemLabel="Selecione Nivel "/>
+            </p:selectOneMenu>
+        </p:panelGrid>
+        
+        <!-- Chama os botoes da pagina -->
+        <ui:include src="/WEB-INF/botoesfuncao/botoesfuncao.xhtml" />
+
+    </h:form>
+
+</ui:composition>
+
