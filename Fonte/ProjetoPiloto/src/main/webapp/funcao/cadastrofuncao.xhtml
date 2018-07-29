@@ -5,31 +5,34 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 template="../template.xhtml">
-
+    <link rel="stylesheet" type="text/css" href="../css/sistema.css" />
 
     <!-- ui:define name="titulo">Função</ui:define -->
 
-    <ui:define name="corpo"></ui:define>
-    <h:form>
-        <h1>Função do Usuário</h1>
+    <ui:define name="corpo">
+        <h:form>
+            <h1>Função do Usuário</h1>
+            
+            <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 10px" columnClasses="rotulo, campo">
+                <p:outputLabel value="Codigo"  for="codigo"/>
+                <p:inputText id="codigo" size="10" maxlength="15"/>
 
-        <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 10px" columnClasses="rotulo, campo">
-            <p:outputLabel value="Codigo"  for="codigo"/>
-            <p:inputText id="codigo" size="10" maxlength="15"/>
+                <p:outputLabel value="Nome" for="nome"/>
+                <p:inputText id="nome" size="50" maxlength="50" />
 
-            <p:outputLabel value="Nome" for="nome"/>
-            <p:inputText id="nome" size="50" maxlength="50" />
+                <p:outputLabel value="Nivel" for="nivel" />
+                <p:selectOneMenu id="nivel">
+                    <f:selectItem itemLabel="Selecione Nivel "/>
+                </p:selectOneMenu>
+            </p:panelGrid>
 
-            <p:outputLabel value="Nivel" for="nivel" />
-            <p:selectOneMenu id="nivel">
-                <f:selectItem itemLabel="Selecione Nivel "/>
-            </p:selectOneMenu>
-        </p:panelGrid>
-        
-        <!-- Chama os botoes da pagina -->
-        <ui:include src="/WEB-INF/botoesfuncao/botoesfuncao.xhtml" />
+            <!-- Chama os botoes da pagina -->
+            
+            <ui:include src="../WEB-INF/botoesfuncao/botoesfuncao.xhtml" />
+            
+            
 
-    </h:form>
-
+        </h:form>
+    </ui:define>
 </ui:composition>
 

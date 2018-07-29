@@ -6,17 +6,18 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/template.xhtml">
     <!-- Botoes Cadastro de Funções -->
-    <ui:define name="corpo"></ui:define>
-    <h:form>
-        <p:toolbar style="margin-top: 10px">
-            <p:toolbarGroup align="left">
-                <p:button value="Salvar" outcome="/funcao/cadastrofuncao.xhtml" />
-                <p:commandButton value="Excluir"/>
-                <p:button value="Pesquisar"/>
-                <p:separator />
-                <p:commandButton value="Sair"/>
-            </p:toolbarGroup>
-        </p:toolbar>
-    </h:form>
+    <ui:define name="botoes"></ui:define>
+        <h:form>
+            <p:toolbar style="margin-top: 10px">
+                <p:toolbarGroup align="left">
+                    <p:button value="Salvar" outcome="/funcao/cadastrofuncao.xhtml" />
+                    <p:commandButton value="Excluir"/>
+                    <p:button value="Pesquisar"/>
+                    <p:separator />
+                    <p:commandButton value="Sair"/>
+                </p:toolbarGroup>
+            </p:toolbar>
+        </h:form>
+    
 </ui:composition>
 

@@ -4,7 +4,8 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
-      template="../template.xhtml">
+      >
+    <!-- template="../template.xhtml" -->
 
     <f:view contentType="text/html">
         <h:head>
@@ -32,16 +33,14 @@
                             <p:menuitem value="Home" url="/index.xhtml"></p:menuitem>
                             <p:menuitem value="Corretora" url="/corretora/cadastrocorretora.xhtml"> </p:menuitem>
                             <p:menuitem value="Funcao" url="/funcao/cadastrofuncao.xhtml" ajax="false" ></p:menuitem>
-                            <p:menuitem value="Colaborador" url="/colaborador/cadastrocolaborador.xhtml" ajax="false"> </p:menuitem>
+                            <p:menuitem value="Colaborador" url="/colaborador/cadastrocolaborador.xhtml" ajax="true"> </p:menuitem>
                             <p:menuitem value="Teste" url="welcomePrimefaces.xhtml"/>
                         </p:submenu>
                     </p:menu>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-
-                    <ui:insert name="corpo"> </ui:insert>
-
+                    <ui:insert name="body"/>
                 </p:layoutUnit>
 
             </p:layout>

@@ -5,86 +5,82 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 template="../template.xhtml">
-    <link rel="stylesheet" type="text/css" href="css/sistema.css" />
+    <link rel="stylesheet" type="text/css" href="../css/sistema.css" />
 
     <!--ui:define name="titulo">Corretora</ui:define -->
 
-    <ui:define name="corpo"></ui:define>
-    <h:form>
-        <h1>Cadastro de Corretora(s)</h1>
-        <p:panelGrid columns="1" id="pai" style="width: 98%; margin-top: 5px" columnClasses="rotulo, campo">
-            <p:panelGrid columns="6" id="painel" style="width: 100%; margin-top: 5px" columnClasses="rotulo, campo, rotulo, campo, rotulo, campo">
+    <ui:define name="corpo">
+        <h:form>
+            <h1>Cadastro de Corretora(s)</h1>
+            <p:panelGrid columns="1" id="pai" style="width: 98%; margin-top: 5px" columnClasses="rotulo, campo">
+                <p:panelGrid columns="6" id="painel" style="width: 100%; margin-top: 5px" columnClasses="rotulo, campo, rotulo, campo, rotulo, campo">
 
-                <p:outputLabel value="Codigo"  for="codigo" />
-                <p:inputText id="codigo" size="10" maxlength="15"/>
+                    <p:outputLabel value="Codigo"  for="codigo" />
+                    <p:inputText id="codigo" size="10" maxlength="15"/>
 
-                <p:outputLabel value="Razão Social" for="razaosocial"/>
-                <p:inputText id="razaosocial" size="50" maxlength="50" />
+                    <p:outputLabel value="Razão Social" for="razaosocial"/>
+                    <p:inputText id="razaosocial" size="50" maxlength="50" />
 
-                <p:outputLabel value="Nome Fantásia" for="nomefantasia" />
-                <p:inputText id="nomefantasia" size="50" maxlength="50" />
-                
-                <h:outputLabel for="cnpj"  value="CNPJ"></h:outputLabel>
-                <p:inputMask mask="99.999.999/9999-99" value="" size="20" maxlength="20"> </p:inputMask>
+                    <p:outputLabel value="Nome Fantásia" for="nomefantasia" />
+                    <p:inputText id="nomefantasia" size="50" maxlength="50" />
 
-                <p:outputLabel value="Inscrição" for="inscricao"/>
-                <p:inputText id="inscricao" size="20" maxlength="45"/>
+                    <h:outputLabel for="cnpj"  value="CNPJ"></h:outputLabel>
+                    <p:inputMask mask="99.999.999/9999-99" value="" size="20" maxlength="20"> </p:inputMask>
+
+                    <p:outputLabel value="Inscrição" for="inscricao"/>
+                    <p:inputText id="inscricao" size="20" maxlength="45"/>
+                </p:panelGrid>
+
+                <p:tabView style="margin-top: 5px" >
+                    <p:tab title="Endereço">
+                        <p:panelGrid columns="4" id="painel2" style="width: 100%; margin-top: 0.4px" columnClasses="rotulo, campo, rotulo, campo">
+                            <p:outputLabel value="Endereço" for="endereco"/>
+                            <p:inputText id="endereco" size="45" maxlength="100" style="width: 98%" />
+
+                            <p:outputLabel value="Bairro" for="bairro"/>
+                            <p:inputText id="bairro" size="30" maxlength="50" style="width: 98%"/>
+
+                            <p:outputLabel value="Cidade" for="cidade" />
+
+                            <p:inputText id="cidade" size="30" maxlength="50" >
+
+                                <p:selectOneMenu id="uf" value="UF" style="width: 80px">
+                                    <f:selectItem itemLabel="UF" itemValue="" />
+                                    <f:selectItems value="GO" />
+                                </p:selectOneMenu>
+                            </p:inputText>
+
+                            <h:outputLabel for="cep"  value="CEP"></h:outputLabel>
+                            <p:inputMask mask="99.9999-99" value="" size="20" maxlength="20"> </p:inputMask>
+
+                        </p:panelGrid> 
+                    </p:tab>
+
+                    <p:tab title="Contato">
+                        <p:panelGrid columns="6" id="painel3" style="width: 100%; margin-top: 0.4px" columnClasses="rotulo, campo, rotulo, campo, rotulo, campo">    
+
+                            <h:outputLabel for="telefone"  value="Telefone"/> 
+                            <p:inputMask mask="(99) 9999-9999" value="" size="20" maxlength="20" />
+
+                            <p:outputLabel value="Contato" for="contato" style="width: 98%"/>
+                            <p:inputText id="contato" size="30" maxlength="45" style="width: 98%"/>
+
+                            <h:outputLabel for="celulcar"  value="Celular" />
+                            <p:inputMask mask="(99) 9999-9999" value="" size="20" maxlength="20" style="width: 98%"/>
+
+                            <p:outputLabel value="Site" for="site"/>
+                            <p:inputText id="site" size="30" maxlength="50" style="width: 98%"/>
+
+                            <p:outputLabel value="E-mail" for="email"/>
+                            <p:inputText id="email" size="30" maxlength="50" style="width: 98%"/>
+
+                        </p:panelGrid>
+                    </p:tab>
+                </p:tabView>
+                <ui:include src="/WEB-INF/botoescorretora/botoescorretora.xhtml" />
             </p:panelGrid>
-
-            <p:tabView style="margin-top: 5px" >
-                <p:tab title="Endereço">
-                    <p:panelGrid columns="4" id="painel2" style="width: 100%; margin-top: 0.4px" columnClasses="rotulo, campo, rotulo, campo">
-                        <p:outputLabel value="Endereço" for="endereco"/>
-                        <p:inputText id="endereco" size="45" maxlength="100" style="width: 98%" />
-
-                        <p:outputLabel value="Bairro" for="bairro"/>
-                        <p:inputText id="bairro" size="30" maxlength="50" style="width: 98%"/>
-
-                        <p:outputLabel value="Cidade" for="cidade" />
-
-                        <p:inputText id="cidade" size="30" maxlength="50" >
-
-                            <p:selectOneMenu id="uf" value="UF" style="width: 80px">
-                                <f:selectItem itemLabel="UF" itemValue="" />
-                                <f:selectItems value="GO" />
-                            </p:selectOneMenu>
-                        </p:inputText>
-
-                        <h:outputLabel for="cep"  value="CEP"></h:outputLabel>
-                        <p:inputMask mask="99.9999-99" value="" size="20" maxlength="20"> </p:inputMask>
-
-                    </p:panelGrid> 
-                </p:tab>
-
-                <p:tab title="Contato">
-                    <p:panelGrid columns="6" id="painel3" style="width: 100%; margin-top: 0.4px" columnClasses="rotulo, campo, rotulo, campo, rotulo, campo">    
-
-                        <h:outputLabel for="telefone"  value="Telefone"/> 
-                        <p:inputMask mask="(99) 9999-9999" value="" size="20" maxlength="20" />
-
-                        <p:outputLabel value="Contato" for="contato" style="width: 98%"/>
-                        <p:inputText id="contato" size="30" maxlength="45" style="width: 98%"/>
-
-                        <h:outputLabel for="celulcar"  value="Celular" />
-                        <p:inputMask mask="(99) 9999-9999" value="" size="20" maxlength="20" style="width: 98%"/>
-
-                        <p:outputLabel value="Site" for="site"/>
-                        <p:inputText id="site" size="30" maxlength="50" style="width: 98%"/>
-
-                        <p:outputLabel value="E-mail" for="email"/>
-                        <p:inputText id="email" size="30" maxlength="50" style="width: 98%"/>
-
-                    </p:panelGrid>
-                </p:tab>
-            </p:tabView>
-            <ui:include src="/WEB-INF/botoescorretora/botoescorretora.xhtml" />
-        </p:panelGrid>
-        <!-- Chama os botoes da pagina -->
-            
-        
-
-
-    </h:form>
-
+            <!-- Chama os botoes da pagina -->
+        </h:form>
+    </ui:define>
 </ui:composition>
 
