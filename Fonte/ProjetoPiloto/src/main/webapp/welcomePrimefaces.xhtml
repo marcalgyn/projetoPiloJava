@@ -3,7 +3,8 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      template="../template.xhtml">
 
     <f:view contentType="text/html">
         <h:head>
@@ -18,28 +19,29 @@
             <p:layout fullPage="true">
 
                 <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                    Header
+                    Cabeçalho
                 </p:layoutUnit>
 
                 <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                    Footer
+                    Rodape
                 </p:layoutUnit>
 
-                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                <p:layoutUnit position="west" size="175" header="Menu" collapsible="true">
                     <p:menu>
-                        <p:submenu label="Resources">
-                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
-                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
-                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
-
+                        <p:submenu label="Cadastros">
+                            <p:menuitem value="Home" url="/index.xhtml"></p:menuitem>
+                            <p:menuitem value="Corretora" url="/corretora/cadastrocorretora.xhtml"> </p:menuitem>
+                            <p:menuitem value="Funcao" url="/funcao/cadastrofuncao.xhtml" ajax="false" ></p:menuitem>
+                            <p:menuitem value="Colaborador" url="/colaborador/cadastrocolaborador.xhtml" ajax="false"> </p:menuitem>
+                            <p:menuitem value="Teste" url="welcomePrimefaces.xhtml"/>
                         </p:submenu>
-
                     </p:menu>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
+
+                    <ui:insert name="corpo"> </ui:insert>
+
                 </p:layoutUnit>
 
             </p:layout>
