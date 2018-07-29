@@ -4,13 +4,13 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
-                template="../template.xhtml">
+               >
     <link rel="stylesheet" type="text/css" href="css/sistema.css" />
 
     <!--ui:define name="titulo">Corretora</ui:define -->
 
-    <ui:define name="corpo"></ui:define>
-    <h:form>
+    <ui:define name="corpo" ></ui:define>
+   
         <h1>Cadastro de Colaborador(s)</h1>
         <p:panelGrid columns="1" id="pai" style="width: 98%; margin-top: 5px" columnClasses="rotulo, campo">
             <p:panelGrid columns="6" id="painel" style="width: 100%; margin-top: 5px" columnClasses="rotulo, campo, rotulo, campo, rotulo, campo">
@@ -91,7 +91,6 @@
             </p:panelGrid>
             <ui:include src="/WEB-INF/botoescolaborador/botoescolaborador.xhtml" />
         </p:panelGrid>
-    </h:form>
 
 </ui:composition>
 
